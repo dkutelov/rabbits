@@ -4,7 +4,6 @@ export default function Answer({
   handleMultipleSelectChange,
   currentValues,
 }) {
-  console.log(currentValues);
   return (
     <div className="mb-8 border-t pt-4">
       <div className="flex-grow">

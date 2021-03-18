@@ -21,8 +21,8 @@ export default class QuestionForm extends Component {
 
   render() {
     return (
-      <div className="bg-blue-200 py-12 px-10 min-h-screen">
-        <div className="bg-white p-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/2">
+      <div className="bg-blue-200 py-12 px-4 md:px-10 min-h-screen">
+        <div className="bg-white px-4 md:px-10 py-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/2">
           <h3 className="text-center text-blue-400 font-bold mb-8 text-xl">
             Създай Нов Въпрос
           </h3>
