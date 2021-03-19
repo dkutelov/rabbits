@@ -1,47 +1,42 @@
 export default function Answer({
-  count,
-  handleInputChange,
-  handleMultipleSelectChange,
-  currentValues,
+  id,
+  text,
+  characteristics,
+  handleAnswerInputChange,
 }) {
   return (
-    <div className="mb-8 border-t pt-4">
+    <div className="mb-3 border-t pt-4">
       <div className="flex-grow">
-        <label htmlFor="name" className="block mb-2 font-bold text-gray-600">
-          Отговор {count}
+        <label
+          htmlFor={`text-${id}`}
+          className="block mb-2 font-bold text-gray-600"
+        >
+          Отговор {id}
         </label>
         <input
           className="border border-gray-300 shadow p-3 w-full rounded"
-          id="name"
-          name={`answer${count}`}
-          value={
-            currentValues[`answer${count}`]
-              ? currentValues[`answer${count}`]
-              : ""
-          }
-          onChange={handleInputChange}
+          id={`text-${id}`}
+          name="text"
+          value={text}
+          onChange={(e) => handleAnswerInputChange(e, id - 1)}
           type="text"
-          placeholder={`Текст на отговор ${count}`}
+          placeholder={`Текст на отговор ${id}`}
         />
       </div>
       <div className="w-full mt-4">
         <div>
           <label
-            htmlFor={`characteristics-${count}`}
+            htmlFor={`characteristics-${id}`}
             className="block text-sm font-medium text-gray-700"
           >
             Характеристики
           </label>
           <select
             multiple
-            value={
-              currentValues[`answer-${count}-characteristics`]
-                ? currentValues[`answer-${count}-characteristics`]
-                : ["0"]
-            }
-            onChange={handleMultipleSelectChange}
-            id={`characteristics-${count}`}
-            name={`answer-${count}-characteristics`}
+            value={characteristics}
+            onChange={(e) => handleAnswerInputChange(e, id - 1)}
+            id={`characteristics-${id}`}
+            name="characteristics"
             autoComplete="Избери характеристика"
             className="mt-1 block w-full py-3 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm md:text-base h-48"
           >
